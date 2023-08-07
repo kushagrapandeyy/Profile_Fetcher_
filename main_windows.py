@@ -139,7 +139,7 @@ def extract_company_names(text):
     company_names = []
 
     for ent in doc.ents:
-        if ent.label_ == "ORG":
+        if ent.label_ == "ORG" or "LTD":
             company_names.append(ent.text)
 
     return company_names
@@ -152,7 +152,8 @@ for newdiv in divs:
         newfifth_div = newfourth_div.find('div', {'class': 'VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf'})
         newcompanyname = newfifth_div.find('span')
         companyname = extract_company_names(newcompanyname.text)
-        company_name.append(', '.join(companyname))
+        string_list = [str(item) for item in companyname]
+        company_name.append(', '.join(string_list))
     except Exception as e:
         print(f"An error occurred while processing the div: {str(e)}")
 
