@@ -11,6 +11,8 @@ import time
 import spacy
 
 options = ChromeOptions()
+
+#To check the functionality of the code comment the command below, uncomment it when you are done with testing
 #options.add_argument("--headless")
 options.add_argument('user-agent=Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5829.0 Safari/537.36')
 
