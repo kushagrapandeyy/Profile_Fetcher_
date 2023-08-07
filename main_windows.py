@@ -152,7 +152,7 @@ for newdiv in divs:
         newfifth_div = newfourth_div.find('div', {'class': 'VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf'})
         newcompanyname = newfifth_div.find('span')
         companyname = extract_company_names(newcompanyname.text)
-        company_name.append(companyname)
+        company_name.append(', '.join(companyname))
     except Exception as e:
         print(f"An error occurred while processing the div: {str(e)}")
 
